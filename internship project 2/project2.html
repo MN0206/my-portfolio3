@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Website Project</title>
+
+<style>
+:root{
+    --bg:#f4f7ff;
+    --card:#ffffff;
+    --text:#222;
+    --primary:#6c63ff;
+    --secondary:#00c6ff;
+}
+
+.dark-mode{
+    --bg:#0f172a;
+    --card:#1e293b;
+    --text:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    transition:.4s;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(15px);
+    box-shadow:0 2px 15px rgba(0,0,0,.1);
+}
+
+.navbar h1{
+    color:var(--primary);
+}
+
+#themeBtn{
+    border:none;
+    padding:10px 20px;
+    border-radius:25px;
+    cursor:pointer;
+    color:#fff;
+    background:linear-gradient(45deg,var(--primary),var(--secondary));
+}
+
+.hero{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#6c63ff,#00c6ff);
+    color:white;
+    padding:20px;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero h2{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    line-height:1.6;
+}
+
+.cards{
+    padding:80px 8%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:var(--card);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.card ul{
+    list-style:none;
+}
+
+.card li{
+    padding:6px 0;
+}
+
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+    .hero h2{
+        font-size:2.5rem;
+    }
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <h1>Portfolio Website Project</h1>
+        <button id="themeBtn">Dark Mode</button>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Portfolio Website</h2>
+            <p>
+                A modern and responsive personal portfolio website
+                designed to showcase skills, projects, education,
+                achievements, and contact information with an attractive
+                and professional user interface.
+            </p>
+        </div>
+    </section>
+
+    <section class="cards">
+
+        <div class="card">
+            <div class="icon">👨‍💻</div>
+            <h3>Project Overview</h3>
+            <p>
+                This portfolio website serves as a professional online
+                presence where visitors can learn about my background,
+                technical skills, projects, and achievements.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🛠️</div>
+            <h3>Technologies Used</h3>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>CSS Grid</li>
+                <li>Flexbox</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="icon">✨</div>
+            <h3>Key Features</h3>
+            <ul>
+                <li>Responsive Design</li>
+                <li>Dark / Light Mode</li>
+                <li>Project Showcase</li>
+                <li>Skills Section</li>
+                <li>Education Section</li>
+                <li>Contact Information</li>
+                <li>Smooth Animations</li>
+                <li>Modern UI Design</li>
+            </ul>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 My Portfolio | Portfolio Website Project</p>
+</footer>
+
+<script>
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+        themeBtn.textContent = "Light Mode";
+    } else {
+        themeBtn.textContent = "Dark Mode";
+    }
+});
+</script>
+
+</body>
+</html>
